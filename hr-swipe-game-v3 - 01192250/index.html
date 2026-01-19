@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR: Swipe to Graduate</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Start Screen -->
+    <div class="start-screen" id="startScreen">
+        <div class="start-content">
+            <div class="start-icon">💼</div>
+            <h1 class="start-title" id="startTitle"></h1>
+            <p class="start-subtitle" id="startSubtitle"></p>
+            <div class="start-rules" id="startRules"></div>
+            <button class="btn btn-primary" id="startBtn"></button>
+        </div>
+    </div>
+
+    <!-- Modifier Selection Screen -->
+    <div class="modifier-screen hidden" id="modifierScreen">
+        <div class="modifier-content">
+            <!-- Player Name Selection -->
+            <div class="name-selection">
+                <p class="name-label" id="nameSelectLabel"></p>
+                <div class="name-input-group">
+                    <input type="text" id="playerNameInput" class="name-input" placeholder="或输入自定义名字">
+                    <button class="btn btn-secondary btn-small" id="nameRandomBtn"></button>
+                </div>
+            </div>
+            
+            <!-- Modifier Selection -->
+            <div class="modifier-selection">
+                <h2 id="modifierSelectTitle"></h2>
+                <p id="modifierSelectDesc"></p>
+                <div class="modifier-grid" id="modifierGrid"></div>
+                <div class="reroll-row">
+                    <span class="reroll-counter" id="rerollCounter"></span>
+                    <button class="btn btn-secondary" id="modifierRerollBtn">重新随机</button>
+                </div>
+                <button class="btn btn-primary" id="modifierConfirmBtn"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div class="game-container" id="gameScreen">
+        <!-- Modifiers Display -->
+        <div class="modifiers-bar" id="modifiersBar"></div>
+        
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat" data-stat="trust">
+                <span class="stat-icon">老板信任</span>
+                <span class="stat-value" id="trustValue">50</span>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="trustBar"></div>
+                </div>
+                <div class="stat-change" id="trustChange"></div>
+            </div>
+            <div class="stat" data-stat="kpi">
+                <span class="stat-icon">绩效</span>
+                <span class="stat-value" id="kpiValue">50</span>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="kpiBar"></div>
+                </div>
+                <div class="stat-change" id="kpiChange"></div>
+            </div>
+            <div class="stat" data-stat="karma">
+                <span class="stat-icon">声望</span>
+                <span class="stat-value" id="karmaValue">50</span>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="karmaBar"></div>
+                </div>
+                <div class="stat-change" id="karmaChange"></div>
+            </div>
+            <div class="stat" data-stat="sanity">
+                <span class="stat-icon">良心</span>
+                <span class="stat-value" id="sanityValue">50</span>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" id="sanityBar"></div>
+                </div>
+                <div class="stat-change" id="sanityChange"></div>
+            </div>
+        </div>
+
+        <!-- Card Area -->
+        <div class="card-area">
+            <div class="card" id="card">
+                <span class="card-type" id="cardType"></span>
+                <div class="card-avatar" id="cardAvatar"></div>
+                <h2 class="card-title" id="cardTitle"></h2>
+                <p class="card-desc" id="cardDesc"></p>
+                <div class="card-choices">
+                    <span class="choice choice-left" id="choiceLeft"></span>
+                    <span class="choice choice-right" id="choiceRight"></span>
+                </div>
+            </div>
+            <span class="swipe-hint left">❌</span>
+            <span class="swipe-hint right">✅</span>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="bottom-bar">
+            <div class="title-section">
+                <span class="title-badge" id="playerTitle"></span>
+                <div class="title-progress">
+                    <p class="next-title" id="nextTitle"></p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p class="progress-text" id="progressText"></p>
+                </div>
+            </div>
+            <p class="turn-counter">
+                <span id="turnLabel"></span>
+                <span id="turnCount">1</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Ending Screen -->
+    <div class="ending-screen" id="endingScreen">
+        <div class="ending-content">
+            <div class="ending-icon" id="endingIcon"></div>
+            <h1 class="ending-title" id="endingTitle"></h1>
+            <p class="ending-desc" id="endingDesc"></p>
+            <button class="btn btn-primary" id="restartBtn"></button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/card.js"></script>
+    <script src="js/input.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
